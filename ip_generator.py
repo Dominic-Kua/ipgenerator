@@ -9,7 +9,7 @@ def generate_random_ip(one=(0,255), two=(0,255), three=(0,255), four=(0,255), st
     """
     for octet in [one,two,three,four]:
         if True in [octet[0]>octet[1], octet[0] < 0, octet[1] < 0, octet[0] > 255, octet[1] > 255] :
-            return "0.0.0.0"
+            return False
     ip_address = [random.randint(ip[0], ip[1]) for ip in [one, two, three, four]]
     if string:
         # De horibilified by https://github.com/Terrub
