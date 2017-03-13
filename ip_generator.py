@@ -12,6 +12,7 @@ def generate_random_ip(one=(0,255), two=(0,255), three=(0,255), four=(0,255), st
             return "0.0.0.0"
     ip_address = [random.randint(ip[0], ip[1]) for ip in [one, two, three, four]]
     if string:
+        # De horibilified by https://github.com/Terrub
         return  f"{ip_address[0]}.{ip_address[1]}.{ip_address[2]}.{ip_address[3]}"
     else:
         return ip_address
